@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pomiary.Controller">
+   <bottom>
+      <VBox alignment="CENTER" prefHeight="102.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="21.0" prefWidth="900.0" spacing="50.0" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#pobierzDane" text="Pobierz dane z serwera" />
+                  <Button mnemonicParsing="false" onAction="#changeScene" text="Wykresy" />
+                  <VBox alignment="CENTER" prefHeight="51.0" prefWidth="299.0" spacing="5.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="215.0" text="Zakres danych do wykresu:" />
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <Label prefHeight="17.0" prefWidth="67.0" text="Od iD: " />
+                              <TextField fx:id="fromIndex" prefHeight="27.0" prefWidth="100.0" />
+                              <Label prefHeight="17.0" prefWidth="68.0" text="Do iD: " />
+                              <TextField fx:id="toIndex" prefHeight="27.0" prefWidth="100.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="label" contentDisplay="CENTER" text="...." textAlignment="CENTER" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </bottom>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="table" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <columns>
+                  <TableColumn fx:id="id" prefWidth="59.0" sortType="DESCENDING" text="iD" />
+                  <TableColumn fx:id="timeStamp" prefWidth="136.0" text="Czas" />
+                  <TableColumn fx:id="temp1" prefWidth="71.0" text="Czujnik 1" />
+                  <TableColumn fx:id="temp2" prefWidth="76.0" text="Czujnik 2" />
+                  <TableColumn fx:id="temp3" prefWidth="79.0" text="Czujnik 3" />
+                  <TableColumn fx:id="temp4" prefWidth="74.0" text="Czujnik 4" />
+                  <TableColumn fx:id="temp5" prefWidth="78.0" text="Czujnik 5" />
+                  <TableColumn fx:id="temp6" prefWidth="73.0" text="Czujnik 6" />
+                <TableColumn fx:id="lux1" prefWidth="74.0" text="Światło" />
+                <TableColumn fx:id="water1" prefWidth="84.0" text="Zalanie" />
+                  <TableColumn fx:id="h1" prefWidth="95.0" text="Wilgotność" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

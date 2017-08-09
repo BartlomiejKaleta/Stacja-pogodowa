@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="borderPane" prefHeight="527.0" prefWidth="704.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pomiary.GraphsController">
+   <center>
+      <TabPane fx:id="tabPane_graf" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab fx:id="wykresTemperatury" closable="false" text="Wykresy temperatury">
+               <content>
+                  <AnchorPane fx:id="anchorPane_temp" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <LineChart id="chart-legend-item-symbol" fx:id="wykres_temp" createSymbols="false" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="396.0" prefWidth="694.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
+                           <xAxis>
+                              <CategoryAxis prefWidth="645.0" side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis side="LEFT" />
+                           </yAxis>
+                        </LineChart>
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+          <Tab closable="false" text="Wykresy swiatła">
+               <content>
+                  <AnchorPane fx:id="anchorPane_lux" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <LineChart fx:id="wykres_lux" createSymbols="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+            <Tab closable="false" text="Wykresy zalania">
+               <content>
+                  <AnchorPane fx:id="anchorPane_water" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <LineChart fx:id="wykres_water" createSymbols="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab closable="false" text="Wykresy wilgotności">
+               <content>
+                  <AnchorPane fx:id="anchorPane_wilgotnosc" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <LineChart fx:id="wykres_wilgotnosc" createSymbols="false" prefHeight="317.0" prefWidth="674.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+   <bottom>
+      <VBox alignment="CENTER" prefHeight="52.0" prefWidth="704.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="moveLabel" text="Move" visible="false" />
+            <Slider fx:id="sliderMove" min="-100.0" visible="false" />
+            <Label fx:id="zoomLabel" text="Zoom" />
+            <Slider fx:id="sliderZoom" />
+            <Button fx:id="powrotdotabeli" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#goBackToMainScene" prefHeight="101.0" prefWidth="717.0" text="Powrót do tabeli danych" textAlignment="CENTER" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+   </bottom>
+</BorderPane>
