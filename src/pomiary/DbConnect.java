@@ -20,7 +20,7 @@ public class DbConnect {
         try {
             Class.forName("com.mysql.jdbc.Driver");
 
-            con = DriverManager.getConnection("jdbc:mysql://sql.grosart.nazwa.pl:3306/grosart_1","grosart_1", "Temp264262" );
+            con = DriverManager.getConnection("jdbc:mysql://sql.grosart.nazwa.pl:3306/grosart_1","login", "password" );
             st = con.createStatement();
 
             System.out.println("Połączono z serwerem mySQL");
